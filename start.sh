@@ -31,9 +31,7 @@ mkdir -p /app/data/logs/backend
 mkdir -p /app/data/logs/nginx
 mkdir -p /app/data/ssl
 
-# 为nginx日志创建软链接（nginx默认在/var/log/nginx写日志）
-rm -rf /var/log/nginx
-ln -sf /app/data/logs/nginx /var/log/nginx
+# 使用Nginx配置中的access_log/error_log写入/app/data/logs/nginx，无需修改/var/log
 
 # 检测SSL证书是否存在
 SSL_AVAILABLE=false
