@@ -126,7 +126,7 @@ jobs:
       with:
         context: build-context
         platforms: linux/amd64,linux/arm64
-        push: ${{ github.event_name != 'pull_request' }}
+        push: ${{ github.event_name != 'pull_request' || github.actor == 'briffery' || github.head_ref == 'portable'}}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         build-args: |
