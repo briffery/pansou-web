@@ -95,7 +95,7 @@ jobs:
         success() &&
         (github.event_name != 'pull_request' ||
         github.actor == 'briffery' ||
-        github.head_ref == 'portable')  # 精确匹配你的分支名
+        github.head_ref == 'portable')  
       uses: docker/login-action@v3
       with:
         registry: ${{ env.REGISTRY }}
